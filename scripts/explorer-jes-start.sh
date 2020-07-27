@@ -32,7 +32,7 @@ SERVER_DIR="${ROOT_DIR}/components/explorer-ui-server"
 JOB_NAME="${ZOWE_PREFIX}UJ"
 
 # start service
-_BPX_JOBNAME=${JOB_NAME} $NODE_BIN $SERVER_DIR/src/index.js \
+_BPX_JOBNAME=${JOB_NAME} $NODE_BIN $SERVER_DIR/server/src/index.js \
   --service ${EXPLORER_PLUGIN_NAME} \
 	--path ${EXPLORER_PLUGIN_BASEURI} \
 	--port ${JES_EXPLORER_UI_PORT} \
