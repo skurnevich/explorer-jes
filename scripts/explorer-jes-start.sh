@@ -27,6 +27,7 @@ EXPLORER_PLUGIN_BASEURI=$($NODE_BIN -e "process.stdout.write(require('./app/pack
 EXPLORER_PLUGIN_NAME=$($NODE_BIN -e "process.stdout.write(require('./app/package.json').config.pluginName)")
 
 # get current ui server directory
+EXPLORER_APP_DIR="${ROOT_DIR}/components/explorer-jes/app"
 SERVER_DIR="${ROOT_DIR}/components/explorer-ui-server"
 
 JOB_NAME="${ZOWE_PREFIX}UJ"
@@ -35,6 +36,7 @@ JOB_NAME="${ZOWE_PREFIX}UJ"
 _BPX_JOBNAME=${JOB_NAME} $NODE_BIN $SERVER_DIR/server/src/index.js \
   --service ${EXPLORER_PLUGIN_NAME} \
 	--path ${EXPLORER_PLUGIN_BASEURI} \
+	--dir  ${EXPLORER_APP_DIR} \
 	--port ${JES_EXPLORER_UI_PORT} \
 	--key  ${KEYSTORE_KEY} \
 	--cert ${KEYSTORE_CERTIFICATE} \
